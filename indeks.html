@@ -1,0 +1,1603 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AllDev-Tools HEADSHOT FF VVIP</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ===== VARIABLES & RESET ===== */
+        :root {
+            --red: #ff3e3e;
+            --dark: #121212;
+            --light: #ffffff;
+            --gray: #aaaaaa;
+            --accent: #00ff88;
+            --gradient: linear-gradient(135deg, #ff3e3e 0%, #121212 30%, #000000 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: var(--dark);
+            color: var(--light);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            background: var(--gradient);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 3px solid var(--accent);
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 900;
+            color: white;
+            text-align: center;
+        }
+
+        .logo span {
+            color: var(--accent);
+            text-shadow: 0 0 10px var(--accent);
+        }
+
+        /* ===== ORDER TRACKER ===== */
+        .order-tracker {
+            background: rgba(255, 62, 62, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 100px auto 30px;
+            text-align: center;
+            border: 2px solid rgba(255, 62, 62, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .order-tracker h3 {
+            color: var(--accent);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+
+        .stat-item {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 15px;
+            border-radius: 10px;
+            min-width: 150px;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--red);
+            display: block;
+        }
+
+        .progress-bar {
+            height: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+
+        .progress {
+            height: 100%;
+            background: linear-gradient(90deg, var(--red), var(--accent));
+            width: 78%;
+            border-radius: 5px;
+            animation: progressAnimation 3s infinite alternate;
+        }
+
+        @keyframes progressAnimation {
+            0% { width: 78%; }
+            100% { width: 85%; }
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            padding: 40px 0;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 20px;
+            margin: 30px 0;
+            border: 2px solid rgba(255, 62, 62, 0.3);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, var(--red), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .price-tag {
+            background: var(--gradient);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-size: 2rem;
+            font-weight: bold;
+            display: inline-block;
+            margin: 20px 0;
+            box-shadow: 0 0 30px rgba(255, 62, 62, 0.5);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .price-tag span {
+            font-size: 1rem;
+            text-decoration: line-through;
+            opacity: 0.7;
+            margin-right: 10px;
+        }
+
+        /* ===== BUTTON ===== */
+        .btn-buy {
+            background: linear-gradient(45deg, var(--red), #ff6b6b);
+            color: white;
+            border: none;
+            padding: 20px 60px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            border-radius: 15px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            margin: 20px 0;
+            transition: all 0.3s;
+            box-shadow: 0 10px 30px rgba(255, 62, 62, 0.4);
+            animation: pulse 2s infinite;
+        }
+
+        .btn-buy:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(255, 62, 62, 0.6);
+        }
+
+        /* ===== INSTANT ACCESS ===== */
+        .instant-access {
+            background: linear-gradient(145deg, 
+                rgba(255, 62, 62, 0.1), 
+                rgba(0, 0, 0, 0.8));
+            padding: 40px;
+            border-radius: 20px;
+            margin: 40px 0;
+            border: 2px solid rgba(255, 62, 62, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .instant-access h3 {
+            text-align: center;
+            color: var(--accent);
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+        }
+
+        .access-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+
+        .access-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 15px;
+            transition: transform 0.3s;
+        }
+
+        .access-item:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 62, 62, 0.1);
+        }
+
+        .access-item i {
+            font-size: 3rem;
+            color: var(--red);
+            margin-bottom: 15px;
+        }
+
+        /* ===== PRODUCT SECTION ===== */
+        .product-section {
+            background: rgba(255, 62, 62, 0.05);
+            padding: 40px;
+            border-radius: 20px;
+            margin: 40px 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            border-radius: 15px;
+            transition: all 0.3s;
+            border: 1px solid rgba(255, 62, 62, 0.1);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--red);
+            box-shadow: 0 10px 30px rgba(255, 62, 62, 0.2);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--red);
+            margin-bottom: 15px;
+        }
+
+        /* ===== MOBILE CTA ===== */
+        .mobile-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to right, #ff3e3e, #ff6b6b);
+            padding: 15px;
+            z-index: 1001;
+            display: none;
+            text-align: center;
+        }
+
+        .mobile-buy-btn {
+            background: white;
+            color: var(--red);
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 10px;
+            cursor: pointer;
+            width: 90%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            animation: pulse 2s infinite;
+        }
+
+        /* ===== SOCIAL PROOF ===== */
+        .social-proof-container {
+            background: rgba(255, 62, 62, 0.05);
+            border: 1px solid rgba(255, 62, 62, 0.2);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 20px 0;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .social-proof-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            color: var(--red);
+            font-weight: bold;
+        }
+
+        .notifications-list {
+            min-height: 120px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        .notification-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            font-size: 0.9rem;
+        }
+
+        .notification-item i {
+            color: var(--accent);
+            font-size: 0.6rem;
+            margin-top: 5px;
+        }
+
+        .notification-item .time {
+            color: var(--gray);
+            font-size: 0.8rem;
+        }
+
+        .stats-bar {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideOut {
+            from {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            to {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+        }
+
+        /* ===== REVIEWS SECTION ===== */
+        .reviews-section {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 40px 0;
+        }
+
+        .reviews-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .overall-rating {
+            text-align: center;
+        }
+
+        .rating-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #ffd700;
+        }
+
+        .rating-stars {
+            font-size: 1.5rem;
+            color: #ffd700;
+            margin: 5px 0;
+        }
+
+        .rating-count {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        .rating-distribution {
+            width: 100%;
+            max-width: 300px;
+            margin: 20px 0 30px;
+        }
+
+        .dist-row {
+            display: flex;
+            align-items: center;
+            margin: 5px 0;
+        }
+
+        .dist-row span:first-child {
+            width: 30px;
+            color: #ffd700;
+        }
+
+        .dist-bar {
+            flex: 1;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            margin: 0 10px;
+            overflow: hidden;
+        }
+
+        .dist-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #ffd700, #ffaa00);
+            border-radius: 4px;
+            transition: width 1s ease;
+        }
+
+        .reviews-list {
+            margin: 30px 0;
+        }
+
+        .review-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .reviewer-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .reviewer-avatar {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--red), #ff6b6b);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+        }
+
+        .review-meta {
+            display: flex;
+            gap: 5px;
+            align-items: center;
+            font-size: 0.8rem;
+            color: var(--gray);
+            margin-top: 2px;
+        }
+
+        .verified {
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .review-rating {
+            color: #ffd700;
+            font-size: 1.2rem;
+        }
+
+        .review-text {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .review-helpful {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .review-helpful button {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: var(--gray);
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .helpful-count {
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .btn-add-review {
+            background: linear-gradient(135deg, var(--red), #ff6b6b);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 0 auto;
+        }
+
+        /* ===== REVIEW MODAL ===== */
+        .review-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 10000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: #1a1a1a;
+            padding: 30px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 500px;
+            border: 2px solid var(--red);
+        }
+
+        .close-modal {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            cursor: pointer;
+        }
+
+        .star-rating-input {
+            position: relative;
+            font-size: 2rem;
+            margin: 20px 0;
+        }
+
+        .star-rating-input span {
+            cursor: pointer;
+            margin: 0 5px;
+            transition: all 0.3s;
+        }
+
+        .rating-text {
+            margin: 10px 0 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            color: white;
+            font-family: inherit;
+        }
+
+        .form-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .btn-submit {
+            flex: 2;
+            background: linear-gradient(135deg, var(--accent), #00cc6a);
+            color: black;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .btn-cancel {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        /* ===== ANALYTICS DASHBOARD ===== */
+        .analytics-dashboard {
+            display: none;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border: 2px solid var(--accent);
+        }
+
+        .analytics-dashboard h3 {
+            color: var(--accent);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .stat-card h4 {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-bottom: 5px;
+        }
+
+        .stat-card p {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--accent);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 60px;
+            border-top: 3px solid var(--red);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .social-links a {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--red);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            color: var(--gray);
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .mobile-cta {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .price-tag {
+                font-size: 1.5rem;
+                padding: 12px 30px;
+            }
+            
+            .btn-buy {
+                padding: 15px 40px;
+                font-size: 1.1rem;
+            }
+            
+            .stats {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .stat-item {
+                min-width: auto;
+            }
+            
+            .access-items {
+                grid-template-columns: 1fr;
+            }
+            
+            .reviews-header {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-crosshairs"></i>
+                AllDev<span>HEADSHOT VVIP</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ORDER TRACKER -->
+    <div class="container">
+        <div class="order-tracker">
+            <h3><i class="fas fa-chart-line"></i> LIVE ORDER TRACKER</h3>
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-number" id="todayOrders">147</span>
+                    <p>Terjual Hari Ini</p>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="totalUsers">3,847</span>
+                    <p>Total User</p>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="viewers">18</span>
+                    <p>Sedang Online</p>
+                </div>
+            </div>
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+            <p><i class="fas fa-fire"></i> <span id="stockLeft">12</span> config tersisa hari ini!</p>
+        </div>
+    </div>
+
+    <!-- HERO SECTION -->
+    <div class="container">
+        <section class="hero">
+            <h1>CONFIG HEADSHOT FREE FIRE<br>90% AKURASI AUTO HEADSHOT</h1>
+            <p>Work Device Andorid -no Ban</p>
+            
+            <div class="price-tag">
+                <span>Rp 50.000</span> Rp 30.000
+            </div>
+            
+            <button class="btn-buy" id="buyButtonMain">
+                <i class="fas fa-bolt"></i>
+                BELI SEKARANG - Rp 30.000
+            </button>
+            
+            <p style="margin-top: 15px; color: var(--accent);">
+                <i class="fas fa-shield-alt"></i> Garansi NO BAN 100% • <i class="fas fa-sync-alt"></i> Garansi Uang Kembali
+            </p>
+        </section>
+    </div>
+
+    <!-- SOCIAL PROOF -->
+    <div class="container">
+        <div class="social-proof-container">
+            <div class="social-proof-header">
+                <i class="fas fa-bolt"></i>
+                <span>LIVE ACTIVITY</span>
+            </div>
+            
+            <div class="notifications-list" id="notificationsList">
+                <!-- Notifications will appear here -->
+            </div>
+            
+            <div class="stats-bar">
+                <span><i class="fas fa-users"></i> <span id="liveUsers">18</span> online</span>
+                <span><i class="fas fa-shopping-cart"></i> <span id="todaySales">47</span> sold today</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- INSTANT ACCESS -->
+    <div class="container">
+        <section class="instant-access">
+            <h3><i class="fas fa-bolt"></i> INSTANT ACCESS SETELAH BAYAR</h3>
+            <div class="access-items">
+                <div class="access-item">
+                    <i class="fas fa-download"></i>
+                    <h4>LINK DOWNLOAD</h4>
+                    <p>Config file langsung</p>
+                </div>
+                <div class="access-item">
+                    <i class="fas fa-video"></i>
+                    <h4>VIDEO TUTORIAL</h4>
+                    <p>Step-by-step install</p>
+                </div>
+                <div class="access-item">
+                    <i class="fas fa-users"></i>
+                    <h4>GRUP VIP</h4>
+                    <p>Support 24/7</p>
+                </div>
+                <div class="access-item">
+                    <i class="fas fa-sync-alt"></i>
+                    <h4>FREE UPDATE</h4>
+                    <p>Lifetime access</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- PRODUCT FEATURES -->
+    <div class="container">
+        <section class="product-section">
+            <h2 style="text-align: center; margin-bottom: 30px; color: var(--accent);">
+                <i class="fas fa-star"></i> FITUR PREMIUM CONFIG
+            </h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Auto Headshot 90%</h3>
+                    <p>Akurasi headshot mencapai 90% dalam semua mode</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-hand-paper"></i>
+                    </div>
+                    <h3>No Recoil</h3>
+                    <p>Senjata tetap stabil tanpa recoil</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Anti-Ban System</h3>
+                    <p>Protected mode aman dari detection</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Device Support</h3>
+                    <p>Android</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- REVIEWS SECTION -->
+    <div class="container">
+        <section class="reviews-section">
+            <div class="reviews-header">
+                <h3><i class="fas fa-star"></i> ULASAN PELANGGAN</h3>
+                <div class="overall-rating">
+                    <div class="rating-number">4.9</div>
+                    <div class="rating-stars">★★★★★</div>
+                    <div class="rating-count">Berdasarkan <span id="reviewCount">247</span> ulasan</div>
+                </div>
+            </div>
+            
+            <!-- Rating Distribution -->
+            <div class="rating-distribution">
+                <div class="dist-row">
+                    <span>5★</span>
+                    <div class="dist-bar"><div class="dist-fill" style="width: 85%"></div></div>
+                    <span>85%</span>
+                </div>
+                <div class="dist-row">
+                    <span>4★</span>
+                    <div class="dist-bar"><div class="dist-fill" style="width: 10%"></div></div>
+                    <span>10%</span>
+                </div>
+                <div class="dist-row">
+                    <span>3★</span>
+                    <div class="dist-bar"><div class="dist-fill" style="width: 3%"></div></div>
+                    <span>3%</span>
+                </div>
+                <div class="dist-row">
+                    <span>2★</span>
+                    <div class="dist-bar"><div class="dist-fill" style="width: 1%"></div></div>
+                    <span>1%</span>
+                </div>
+                <div class="dist-row">
+                    <span>1★</span>
+                    <div class="dist-bar"><div class="dist-fill" style="width: 1%"></div></div>
+                    <span>1%</span>
+                </div>
+            </div>
+            
+            <!-- Reviews List -->
+            <div class="reviews-list" id="reviewsList">
+                <!-- Reviews will be loaded here -->
+            </div>
+            
+            <!-- Add Review Button -->
+            <button class="btn-add-review" onclick="showReviewForm()">
+                <i class="fas fa-edit"></i> TAMBAH ULASAN
+            </button>
+        </section>
+    </div>
+
+    <!-- ANALYTICS DASHBOARD (Hidden by default) -->
+    <div class="container">
+        <div class="analytics-dashboard">
+            <h3>📊 ANALYTICS DASHBOARD</h3>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h4>Total Views</h4>
+                    <p id="statViews">0</p>
+                </div>
+                <div class="stat-card">
+                    <h4>Buy Clicks</h4>
+                    <p id="statClicks">0</p>
+                </div>
+                <div class="stat-card">
+                    <h4>Conversion</h4>
+                    <p id="statConversion">0%</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MOBILE CTA -->
+    <div class="mobile-cta">
+        <button class="mobile-buy-btn" onclick="buyConfig()">
+            <i class="fas fa-bolt"></i>
+            BELI CONFIG - Rp 30.000
+        </button>
+    </div>
+
+    <!-- REVIEW MODAL -->
+    <div class="review-modal" id="reviewModal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="hideReviewForm()">×</button>
+            <h3>BERI ULASAN</h3>
+            
+            <div class="star-rating-input">
+                <span onclick="setRating(1)">☆</span>
+                <span onclick="setRating(2)">☆</span>
+                <span onclick="setRating(3)">☆</span>
+                <span onclick="setRating(4)">☆</span>
+                <span onclick="setRating(5)">☆</span>
+                <div class="selected-stars"></div>
+            </div>
+            
+            <div class="rating-text" id="ratingText">Pilih rating</div>
+            
+            <input type="text" id="reviewName" placeholder="Nama kamu (optional)">
+            <input type="text" id="reviewCity" placeholder="Kota (optional)">
+            
+            <textarea id="reviewMessage" placeholder="Bagaimana pengalaman kamu dengan config headshot ini?" rows="4"></textarea>
+            
+            <div class="form-actions">
+                <button class="btn-submit" onclick="submitReview()">KIRIM ULASAN</button>
+                <button class="btn-cancel" onclick="hideReviewForm()">BATAL</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="logo" style="margin-bottom: 20px;">
+                <i class="fas fa-crosshairs"></i>
+                HEADSHOT<span>PRO</span>
+            </div>
+            
+            <p>Confic permium by AllDev</p>
+            
+            
+            
+            <div class="copyright">
+                <p>© 2026 AllDev.store - Config Premium </p>
+                <p>Dilarang Reuplod Confic Ini ,Hargai Saya Sebagai Pembuat</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP -->
+    <a href="https://wa.me/6283861303306?text=Halo%20AllDev,%20saya%20mau%20beli%20config%20headshot%20Rp%2030.000" 
+       style="position: fixed; bottom: 20px; right: 20px; background: #25D366; color: white; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; box-shadow: 0 0 20px rgba(37, 211, 102, 0.5); z-index: 1000; text-decoration: none;">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        // ===== SIMPLE ANALYTICS SYSTEM =====
+        class SimpleAnalytics {
+            constructor() {
+                this.sessionId = this.generateSessionId();
+                this.pageViews = 0;
+                this.events = [];
+                this.init();
+            }
+            
+            generateSessionId() {
+                return 'session_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+            }
+            
+            init() {
+                // Load existing data
+                this.pageViews = parseInt(localStorage.getItem('totalPageViews')) || 0;
+                this.events = JSON.parse(localStorage.getItem('analyticsEvents')) || [];
+                
+                // Track page view
+                this.trackPageView();
+                
+                // Track time on page
+                this.trackTimeOnPage();
+                
+                // Auto-save data setiap 10 detik
+                setInterval(() => this.saveData(), 10000);
+            }
+            
+            trackPageView() {
+                this.pageViews++;
+                localStorage.setItem('totalPageViews', this.pageViews);
+                
+                const pageViewEvent = {
+                    type: 'pageview',
+                    timestamp: new Date().toISOString(),
+                    session: this.sessionId,
+                    url: window.location.href
+                };
+                
+                this.events.push(pageViewEvent);
+                console.log('📊 Page View:', this.pageViews);
+                
+                // Update display
+                document.getElementById('statViews').textContent = this.pageViews;
+            }
+            
+            trackEvent(eventName, data = {}) {
+                const event = {
+                    type: eventName,
+                    timestamp: new Date().toISOString(),
+                    session: this.sessionId,
+                    data: data
+                };
+                
+                this.events.push(event);
+                console.log('📊 Event:', eventName, data);
+                
+                // Update buy clicks display
+                if(eventName === 'buy_click') {
+                    const buyClicks = this.events.filter(e => e.type === 'buy_click').length;
+                    document.getElementById('statClicks').textContent = buyClicks;
+                    
+                    // Update conversion rate
+                    const conversionRate = this.pageViews > 0 ? 
+                        ((buyClicks / this.pageViews) * 100).toFixed(2) + '%' : '0%';
+                    document.getElementById('statConversion').textContent = conversionRate;
+                }
+            }
+            
+            trackTimeOnPage() {
+                const startTime = Date.now();
+                
+                window.addEventListener('beforeunload', () => {
+                    const timeSpent = Math.floor((Date.now() - startTime) / 1000);
+                    this.trackEvent('time_on_page', { seconds: timeSpent });
+                });
+            }
+            
+            saveData() {
+                localStorage.setItem('analyticsEvents', JSON.stringify(this.events));
+            }
+            
+            getStats() {
+                const buyClicks = this.events.filter(e => e.type === 'buy_click').length;
+                const uniqueSessions = [...new Set(this.events.map(e => e.session))].length;
+                
+                return {
+                    totalPageViews: this.pageViews,
+                    totalEvents: this.events.length,
+                    buyClicks: buyClicks,
+                    uniqueSessions: uniqueSessions,
+                    conversionRate: this.pageViews > 0 ? ((buyClicks / this.pageViews) * 100).toFixed(2) + '%' : '0%'
+                };
+            }
+        }
+
+        // ===== SOCIAL PROOF SYSTEM =====
+        class SocialProof {
+            constructor() {
+                this.notifications = [
+                    "Budi dari Jakarta baru saja membeli config headshot",
+                    "Sandi dari Surabaya berhasil download config",
+                    "Rating 5★ dari Andi untuk config headshot",
+                    "Dika berhasil naik ke Grandmaster setelah pakai config",
+                    "Rizky memberikan testimoni positif",
+                    "Order #1287 sedang diproses",
+                    "Customer puas dari Bandung memberikan rating 5★",
+                    "Fajar baru saja bergabung sebagai member VIP",
+                    "Order dari Sidoarjo berhasil dikirim",
+                    "Reseller baru dari Malang bergabung"
+                ];
+                
+                this.cities = ['Jakarta', 'Surabaya', 'Bandung', 'Medan', 'Makassar', 'Semarang', 'Bali', 'Yogyakarta'];
+                this.names = ['Budi', 'Sandi', 'Andi', 'Rizky', 'Dika', 'Fajar', 'Rama', 'Ahmad', 'Putra', 'Bayu'];
+                
+                this.todaySales = parseInt(localStorage.getItem('todaySales')) || 47;
+                this.totalSales = parseInt(localStorage.getItem('totalSales')) || 3847;
+                
+                this.init();
+            }
+            
+            init() {
+                // Start notifications
+                this.startNotifications();
+                
+                // Update live stats
+                this.updateLiveStats();
+                
+                // Initial display
+                document.getElementById('todaySales').textContent = this.todaySales;
+            }
+            
+            startNotifications() {
+                // Show first notification immediately
+                setTimeout(() => this.showNotification(), 2000);
+                
+                // Continue showing notifications
+                setInterval(() => {
+                    if(Math.random() > 0.3) {
+                        this.showNotification();
+                    }
+                }, Math.random() * 30000 + 15000);
+            }
+            
+            showNotification() {
+                const list = document.getElementById('notificationsList');
+                const randomNotification = this.notifications[Math.floor(Math.random() * this.notifications.length)];
+                
+                const name = this.names[Math.floor(Math.random() * this.names.length)];
+                const city = this.cities[Math.floor(Math.random() * this.cities.length)];
+                
+                let notification = randomNotification
+                    .replace(/Budi|Sandi|Andi|Rizky|Dika|Fajar/g, name)
+                    .replace(/Jakarta|Surabaya|Bandung|Medan|Makassar/g, city);
+                
+                const time = this.getRandomTime();
+                notification += ` <span class="time">${time}</span>`;
+                
+                const notificationElement = document.createElement('div');
+                notificationElement.className = 'notification-item';
+                notificationElement.innerHTML = `
+                    <i class="fas fa-circle"></i>
+                    <span>${notification}</span>
+                `;
+                
+                list.insertBefore(notificationElement, list.firstChild);
+                
+                if(list.children.length > 5) {
+                    list.removeChild(list.lastChild);
+                }
+                
+                notificationElement.style.animation = 'slideIn 0.3s ease';
+                
+                setTimeout(() => {
+                    if(notificationElement.parentNode) {
+                        notificationElement.style.animation = 'slideOut 0.3s ease';
+                        setTimeout(() => {
+                            if(notificationElement.parentNode) {
+                                notificationElement.remove();
+                            }
+                        }, 300);
+                    }
+                }, 30000);
+            }
+            
+            getRandomTime() {
+                const minutes = Math.floor(Math.random() * 60);
+                return `${minutes} menit yang lalu`;
+            }
+            
+            updateLiveStats() {
+                setInterval(() => {
+                    const liveUsers = document.getElementById('liveUsers');
+                    const base = 15;
+                    const random = Math.floor(Math.random() * 10);
+                    liveUsers.textContent = base + random;
+                }, 15000);
+                
+                setInterval(() => {
+                    if(Math.random() > 0.8) {
+                        this.todaySales++;
+                        localStorage.setItem('todaySales', this.todaySales);
+                        document.getElementById('todaySales').textContent = this.todaySales;
+                        
+                        this.totalSales++;
+                        localStorage.setItem('totalSales', this.totalSales);
+                    }
+                }, 30000);
+            }
+        }
+
+        // ===== REVIEWS SYSTEM =====
+        class ReviewsSystem {
+            constructor() {
+                this.reviews = [];
+                this.currentRating = 0;
+                this.init();
+            }
+            
+            init() {
+                this.loadReviews();
+                this.displayReviews();
+                this.updateReviewCount();
+            }
+            
+            loadReviews() {
+                const savedReviews = localStorage.getItem('productReviews');
+                if(savedReviews) {
+                    this.reviews = JSON.parse(savedReviews);
+                } else {
+                    this.reviews = [
+                        {
+                            id: 1,
+                            name: 'Rizky Gaming',
+                            city: 'Jakarta',
+                            rating: 5,
+                            message: 'Config nya work banget! Dari Gold langsung push ke Grandmaster dalam 2 minggu.',
+                            date: '2024-01-15',
+                            verified: true
+                        },
+                        {
+                            id: 2,
+                            name: 'Sandi Pro',
+                            city: 'Surabaya',
+                            rating: 5,
+                            message: 'Headshot rate meningkat drastis. Support nya responsif banget!',
+                            date: '2024-01-14',
+                            verified: true
+                        },
+                        {
+                            id: 3,
+                            name: 'Andi FF',
+                            city: 'Bandung',
+                            rating: 5,
+                            message: 'Worth banget untuk 30k! No recoil nya beneran smooth.',
+                            date: '2024-01-13',
+                            verified: false
+                        }
+                    ];
+                    this.saveReviews();
+                }
+            }
+            
+            saveReviews() {
+                localStorage.setItem('productReviews', JSON.stringify(this.reviews));
+            }
+            
+            displayReviews() {
+                const container = document.getElementById('reviewsList');
+                container.innerHTML = '';
+                
+                const sortedReviews = [...this.reviews].sort((a, b) => 
+                    new Date(b.date) - new Date(a.date)
+                );
+                
+                sortedReviews.slice(0, 3).forEach(review => {
+                    const reviewElement = this.createReviewElement(review);
+                    container.appendChild(reviewElement);
+                });
+            }
+            
+            createReviewElement(review) {
+                const element = document.createElement('div');
+                element.className = 'review-card';
+                
+                const stars = '★'.repeat(review.rating) + '☆'.repeat(5 - review.rating);
+                const date = new Date(review.date).toLocaleDateString('id-ID');
+                
+                element.innerHTML = `
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-avatar">
+                                ${review.name.charAt(0)}
+                            </div>
+                            <div>
+                                <h4>${review.name}</h4>
+                                <div class="review-meta">
+                                    <span>${review.city}</span>
+                                    <span>•</span>
+                                    <span>${date}</span>
+                                    ${review.verified ? '<span class="verified">✓ Terverifikasi</span>' : ''}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="review-rating">
+                            ${stars}
+                        </div>
+                    </div>
+                    <p class="review-text">${review.message}</p>
+                    <div class="review-helpful">
+                        <button onclick="markHelpful(${review.id})">
+                            <i class="fas fa-thumbs-up"></i> Membantu
+                        </button>
+                        <span class="helpful-count">${review.helpful || 0}</span>
+                    </div>
+                `;
+                
+                return element;
+            }
+            
+            addReview(name, city, rating, message) {
+                const newReview = {
+                    id: Date.now(),
+                    name: name || 'Anonymous',
+                    city: city || '',
+                    rating: rating,
+                    message: message,
+                    date: new Date().toISOString().split('T')[0],
+                    verified: false,
+                    helpful: 0
+                };
+                
+                this.reviews.unshift(newReview);
+                this.saveReviews();
+                this.displayReviews();
+                this.updateReviewCount();
+                this.updateRatingDistribution();
+                
+                if(window.analytics) {
+                    analytics.trackEvent('review_added', { rating: rating });
+                }
+            }
+            
+            updateReviewCount() {
+                document.getElementById('reviewCount').textContent = this.reviews.length;
+            }
+            
+            updateRatingDistribution() {
+                const ratings = {5: 0, 4: 0, 3: 0, 2: 0, 1: 0};
+                this.reviews.forEach(review => {
+                    ratings[review.rating]++;
+                });
+                
+                [5,4,3,2,1].forEach(rating => {
+                    const percentage = (ratings[rating] / this.reviews.length) * 100 || 0;
+                    const fill = document.querySelector(`.dist-row:nth-child(${6-rating}) .dist-fill`);
+                    const percentageSpan = document.querySelector(`.dist-row:nth-child(${6-rating}) span:last-child`);
+                    
+                    if(fill) fill.style.width = `${percentage}%`;
+                    if(percentageSpan) percentageSpan.textContent = `${Math.round(percentage)}%`;
+                });
+            }
+        }
+
+        // ===== INITIALIZE ALL SYSTEMS =====
+        const analytics = new SimpleAnalytics();
+        const socialProof = new SocialProof();
+        const reviewsSystem = new ReviewsSystem();
+
+        // ===== ORDER TRACKER ANIMATION =====
+        function updateTracker() {
+            const todayElement = document.getElementById('todayOrders');
+            let todayOrders = parseInt(todayElement.textContent);
+            if (Math.random() > 0.7) {
+                todayOrders += Math.floor(Math.random() * 3);
+                todayElement.textContent = todayOrders;
+                localStorage.setItem('todayOrders', todayOrders);
+            }
+            
+            const viewersElement = document.getElementById('viewers');
+            viewersElement.textContent = Math.floor(Math.random() * 10) + 15;
+            
+            const stockElement = document.getElementById('stockLeft');
+            let stock = parseInt(stockElement.textContent);
+            if (stock > 5 && Math.random() > 0.8) {
+                stock--;
+                stockElement.textContent = stock;
+            }
+            
+            const totalElement = document.getElementById('totalUsers');
+            let totalUsers = parseInt(localStorage.getItem('totalUsers')) || 3847;
+            if (Math.random() > 0.9) {
+                totalUsers++;
+                localStorage.setItem('totalUsers', totalUsers);
+                totalElement.textContent = totalUsers.toLocaleString();
+            }
+        }
+        
+        setInterval(updateTracker, 30000);
+        
+        // ===== BUY CONFIG FUNCTION =====
+        function buyConfig() {
+            analytics.trackEvent('buy_click', { source: 'button' });
+            
+            const phone = '6283861303306'; // GANTI NOMOR WA KAMU
+            const templates = [
+                "Halo AllDev, saya mau beli config headshot Rp 30.000",
+                "Saya ready order config headshot Free Fire",
+                "Mau beli config headshot, tolong dikirim detail pembayaran",
+                "Order config headshot 90% akurasi, harga 30k"
+            ];
+            
+            const randomTemplate = templates[Math.floor(Math.random() * templates.length)];
+            const waUrl = `https://wa.me/${phone}?text=${encodeURIComponent(randomTemplate)}`;
+            window.open(waUrl, '_blank');
+        }
+        
+        document.getElementById('buyButtonMain').addEventListener('click', buyConfig);
+        
+        // ===== REVIEW FORM FUNCTIONS =====
+        let currentRating = 0;
+        
+        function showReviewForm() {
+            document.getElementById('reviewModal').style.display = 'flex';
+            currentRating = 0;
+            updateRatingDisplay();
+        }
+        
+        function hideReviewForm() {
+            document.getElementById('reviewModal').style.display = 'none';
+        }
+        
+        function setRating(rating) {
+            currentRating = rating;
+            updateRatingDisplay();
+        }
+        
+        function updateRatingDisplay() {
+            const stars = document.querySelectorAll('.star-rating-input span');
+            const ratingText = document.getElementById('ratingText');
+            
+            stars.forEach((star, index) => {
+                star.textContent = index < currentRating ? '★' : '☆';
+                star.style.color = index < currentRating ? '#ffd700' : '#666';
+            });
+            
+            const texts = [
+                'Pilih rating',
+                'Buruk',
+                'Cukup',
+                'Baik',
+                'Sangat Baik',
+                'Luar Biasa!'
+            ];
+            
+            ratingText.textContent = texts[currentRating];
+            ratingText.style.color = currentRating >= 4 ? '#00ff88' : 
+                                    currentRating >= 3 ? '#ffd700' : '#ff3e3e';
+        }
+        
+        function submitReview() {
+            const name = document.getElementById('reviewName').value.trim();
+            const city = document.getElementById('reviewCity').value.trim();
+            const message = document.getElementById('reviewMessage').value.trim();
+            
+            if(currentRating === 0) {
+                alert('Silakan beri rating terlebih dahulu!');
+                return;
+            }
+            
+            if(message.length < 10) {
+                alert('Ulasan minimal 10 karakter!');
+                return;
+            }
+            
+            reviewsSystem.addReview(name, city, currentRating, message);
+            
+            document.getElementById('reviewName').value = '';
+            document.getElementById('reviewCity').value = '';
+            document.getElementById('reviewMessage').value = '';
+            
+            hideReviewForm();
+            alert('Terima kasih atas ulasannya! 🎉');
+        }
+        
+        function markHelpful(reviewId) {
+            const review = reviewsSystem.reviews.find(r => r.id === reviewId);
+            if(review) {
+                review.helpful = (review.helpful || 0) + 1;
+                reviewsSystem.saveReviews();
+                reviewsSystem.displayReviews();
+                
+                analytics.trackEvent('review_helpful', { reviewId: reviewId });
+            }
+        }
+        
+        // ===== WHATSAPP DIRECT CHAT =====
+        function whatsappChat() {
+            const phone = '6283861303306'; // GANTI NOMOR WA KAMU
+            const message = "Halo AllDev, saya mau tanya tentang config headshot";
+            const waUrl = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+            window.open(waUrl, '_blank');
+        }
+        
+        // ===== MOBILE UX =====
+        window.addEventListener('scroll', function() {
+            const mobileCTA = document.querySelector('.mobile-cta');
+            if (window.innerWidth <= 768) {
+                if (window.scrollY > 500) {
+                    mobileCTA.style.display = 'block';
+                } else {
+                    mobileCTA.style.display = 'none';
+                }
+            }
+        });
+        
+        // ===== ANALYTICS DASHBOARD CONTROL =====
+        document.addEventListener('keydown', function(e) {
+            if(e.ctrlKey && e.altKey && e.key === 'a') {
+                localStorage.setItem('showAnalytics', 'true');
+                document.querySelector('.analytics-dashboard').style.display = 'block';
+                const stats = analytics.getStats();
+                document.getElementById('statViews').textContent = stats.totalPageViews;
+                document.getElementById('statClicks').textContent = stats.buyClicks;
+                document.getElementById('statConversion').textContent = stats.conversionRate;
+                alert('Analytics Dashboard diaktifkan!');
+            }
+        });
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            updateRatingDisplay();
+            updateTracker();
+            
+            // Check if analytics should be shown
+            if(localStorage.getItem('showAnalytics') === 'true') {
+                document.querySelector('.analytics-dashboard').style.display = 'block';
+                const stats = analytics.getStats();
+                document.getElementById('statViews').textContent = stats.totalPageViews;
+                document.getElementById('statClicks').textContent = stats.buyClicks;
+                document.getElementById('statConversion').textContent = stats.conversionRate;
+            }
+            
+            console.log('🚀 HeadshotPro Website Ready!');
+            console.log('📊 Analytics Active');
+            console.log('💬 Social Proof Active');
+            console.log('⭐ Reviews System Active');
+        });
+    </script>
+</body>
+</html>
